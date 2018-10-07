@@ -10,8 +10,9 @@ import Layout from '../components/Layout'
 export default props => {
       return (
       <Layout>
-        {props.children}
-        {props.children}
+      <div>
+      {props.children}
+      </div>              
       </Layout>
     )
   }
