@@ -3,7 +3,7 @@ import { Github, Reddit, Twitter } from 'grommet-icons'
 import React from 'react'
 
 import siteConfig from '../../site-config'
-import biopic from './biopic.jpg'
+import biopic from '../assets/biopic.jpg'
 
 export default () => (
   <section>
