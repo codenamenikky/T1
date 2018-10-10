@@ -7,6 +7,31 @@ module.exports = {
   pathPrefix: '/gatsby-starter-blog-grommet',
   plugins: [
     {
+      resolve: `gatsby-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/templates/mdxlayout.js"),
+          mdx: require.resolve("./src/templates/mdxlayout.js")
+
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1024
+            }
+          }
+          ]
+     }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/mdxblog`,
+        name: 'blog'
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/pages`,
