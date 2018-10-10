@@ -70,7 +70,7 @@ exports.createPages = ({ graphql, actions }) => {
           createPage({
             path: `/${node.parent.sourceInstanceName}/${node.parent.name}`,
             component: componentWithMDXScope(
-              path.resolve("./src/templates/mdx-runtime-test.js"),
+              path.resolve("./src/templates/mdx-auto-template.js"),
               node.code.scope
             ),
             context: { id: node.id }

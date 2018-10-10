@@ -13,14 +13,22 @@ module.exports = {
           default: require.resolve("./src/templates/mdxlayout.js"),
           mdx: require.resolve("./src/templates/mdxlayout.js")
 
-        }
+        },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1024
+            }
+          }
+          ]
      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/mdxblog`,
-        name: 'mdx'
+        name: 'blog'
       }
     },
     {
