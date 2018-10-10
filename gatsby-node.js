@@ -2,6 +2,7 @@ const _ = require('lodash')
 const Promise = require('bluebird')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
+const componentWithMDXScope = require("gatsby-mdx/component-with-mdx-scope");
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -12,6 +13,22 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
+            allMdx {
+              edges {
+                node {
+                  id
+                  parent {
+                    ... on File {
+                      name
+                      sourceInstanceName
+                    }
+                  }
+                  code {
+                    scope
+                  }
+                }
+              }
+            }
             allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
               edges {
                 node {
@@ -49,6 +66,16 @@ exports.createPages = ({ graphql, actions }) => {
             }
           })
         })
+                result.data.allMdx.edges.forEach(({ node }) => {
+          createPage({
+            path: `/${node.parent.sourceInstanceName}/${node.parent.name}`,
+            component: componentWithMDXScope(
+              path.resolve("./src/templates/mdx-auto-template.js"),
+              node.code.scope
+            ),
+            context: { id: node.id }
+          });
+        });
       })
     )
   })
