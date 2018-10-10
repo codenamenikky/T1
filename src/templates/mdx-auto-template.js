@@ -14,14 +14,13 @@ export default class MDXRuntimeTest extends Component {
       <MDXProvider
         components={{
           h1: ({ children, ...props }) => (
-            <h1 {...props}>Provided: {children}</h1>
+            <h1 {...props}>{children}</h1>
           ),
           wrapper: "article"
         }}
       >
       <Layout>
         <div>
-          <h1>Uses MDXRenderer</h1>
           <div>{children}</div>
           <MDXRenderer {...props}>{data.mdx.code.body}</MDXRenderer>
         </div>
