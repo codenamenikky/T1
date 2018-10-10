@@ -13,14 +13,7 @@ class BlogIndex extends Component {
       this,
       'props.data.site.siteMetadata.description'
     )
-    console.log('This is trouble')  
-    const posts = get(this, 'props.data.allMdx.edges')
-    posts.map(({node})=>{
-      console.log(`/${node.parent.sourceInstanceName}/${node.parent.name}`)
-      node.fields= {slug :`/${node.parent.sourceInstanceName}/${node.parent.name}`}
-    }
-
-    )
+    const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
       <Layout location={this.props.location}>
@@ -72,32 +65,6 @@ export const pageQuery = graphql`
         description
       }
     }
-    
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }){
-      edges{
-        node{
-          excerpt
-					parent{
-            ... on File{
-              name
-              sourceInstanceName
-            }
-          }
-          frontmatter{
-            date(formatString: "DD MMMM, YYYY")
-            title
-            cover{
-              childImageSharp{
-                fluid{
-                  src
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-    
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {

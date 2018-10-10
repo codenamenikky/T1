@@ -3,6 +3,7 @@ import { Github, Reddit, Twitter } from 'grommet-icons'
 import React from 'react'
 
 import siteConfig from '../../site-config'
+import biopic from '../assets/biopic.jpg'
 
 export default () => (
   <section>
@@ -23,7 +24,7 @@ export default () => (
             fit='contain'
             title={siteConfig.author}
             alt={siteConfig.author}
-            src={siteConfig.authorImage}
+            src={biopic}
           />
         </Box>
         <Box>
