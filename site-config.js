@@ -3,14 +3,14 @@ module.exports = {
   // Change information to your own:
   //
   // Site Info:
-  title: 'Gatsby Starter Blog Grommet v2',
-  description: 'This is a DEMO site! SSG - Gatsby JS, UI - Grommet v2',
-  siteUrl: 'https://ganevru.github.io/gatsby-starter-blog-grommet/',
+  title: 'Choice of Energy',
+  description: 'This is a atempt to share knowledge about energy',
+  siteUrl: 'https://choiceofenergy.com',
   footerText:
-    '**2018**<br><br>Go here: site-config.js, and replace this text with your own', // You can use Markdown markup here
+    '**Choice of Energy**<br><br>trying to share energy knowledge', // You can use Markdown markup here
 
   // Blog Author Info:
-  author: 'Ivan Ganev',
+  author: 'Nikhil Kondabala',
   authorImage:
     'https://pbs.twimg.com/profile_images/986603715732934656/7A4Nt68k_400x400.jpg',
   authorBio:
