@@ -16,7 +16,7 @@ module.exports = {
     //'https://pbs.twimg.com/profile_images/986603715732934656/7A4Nt68k_400x400.jpg',
     './src/componenets/biopic.jpg',
   authorBio:
-    "Hello, I'm Nikhil Kondabala I work in the advanced energy economy. ", // You can use Markdown markup here
+    "Hello, I'm Nikhil Kondabala I work in the advanced energy economy. This is space where I try to explore open datasets about the energy and share the knowledge from them.", // You can use Markdown markup here
   social: {
     twitter: 'codenamenikky',
     github: 'codenamenikky',
