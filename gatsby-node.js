@@ -71,7 +71,8 @@ exports.createPages = ({ graphql, actions }) => {
             path: `/${node.parent.sourceInstanceName}/${node.parent.name}`,
             component: componentWithMDXScope(
               path.resolve("./src/templates/mdx-auto-template.js"),
-              node.code.scope
+              node.code.scope, 
+              __dirname
             ),
             context: { id: node.id }
           });
@@ -94,3 +95,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
+      alias: {
+        $components: path.resolve(__dirname, 'src/components'),
+      },
+    }
+  });
+};
