@@ -4,7 +4,7 @@ module.exports = {
   //
   // Site Info:
   title: 'Choice of Energy',
-  description: 'This is a atempt to share knowledge about energy',
+  description: 'This is an attempt to share knowledge about energy',
   siteUrl: 'https://choiceofenergy.com',
   footerText:
     '**Choice of Energy**<br><br>trying to share energy knowledge', // You can use Markdown markup here

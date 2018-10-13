@@ -9,6 +9,7 @@ module.exports = {
     {
       resolve: `gatsby-mdx`,
       options: {
+        extensions: ['.mdx', '.md'],
         defaultLayouts: {
           default: require.resolve("./src/templates/mdxlayout.js"),
           mdx: require.resolve("./src/templates/mdxlayout.js")
@@ -21,6 +22,7 @@ module.exports = {
               maxWidth: 1024
             }
           }
+
           ]
      }
     },
