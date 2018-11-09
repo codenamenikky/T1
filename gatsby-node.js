@@ -102,6 +102,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       alias: {
         $components: path.resolve(__dirname, 'src/components'),
         $images: path.resolve(__dirname, 'src/mdxblog/images'),
+        $mdxblog: path.resolve(__dirname, 'src/mdxblog'),
       },
     }
   });
